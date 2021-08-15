@@ -6,7 +6,7 @@ RUN mkdir /code \
 &&apt-get -y install unixodbc-dev
 COPY ./ /code 
 COPY ./requirements.txt /code
-RUN pip install -r /code/requirements.txt -i https://pypi.douban.com/simple
+RUN pip install -r /code/requirements.txt
 WORKDIR /code
 
 CMD ["/bin/bash","run.sh"]

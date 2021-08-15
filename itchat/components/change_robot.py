@@ -56,14 +56,14 @@ class Change(object):
             auto_robot_id = list(filter(lambda x: x != self.robot_id, self.robots))
             radom_index = random.randint(0,len(auto_robot_id)-1)
             self.select_robot(auto_robot_id[radom_index])
-            return '切换成功'
+            return '没听清，再说一次呗'
         except:
             return '自动切换失败'
 
     def result_message(self,msg):
-        if self.robot_id == 1:
+        if self.robot_id == 0:
             return self.qing_yun_ke(msg)
-        elif self.robot_id == 0:
+        elif self.robot_id == 1:
             return self.tu_ling(msg)
         elif self.robot_id == 2:
             return self.tu_ling_AI(msg)

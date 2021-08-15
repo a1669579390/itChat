@@ -1,0 +1,11 @@
+version: "3"
+services:
+  web1:
+    build: .
+    image: itChat
+    ports:
+      - "7500:8000"
+    volumes:
+      - /home/code/itChat:/code
+    privileged: true
+    restart: always

@@ -1,11 +1,7 @@
 FROM python:3.6.4
 
-RUN mkdir /code \
-&&apt-get update \
-&&apt-get -y install freetds-dev \
-&&apt-get -y install unixodbc-dev
-COPY . /code 
-RUN pip install -r /code/requirements.txt
-WORKDIR /code
 
+WORKDIR /code
+COPY requirements.txt .
+RUN pip install -r /code/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 CMD ["/bin/bash","run.sh"]
